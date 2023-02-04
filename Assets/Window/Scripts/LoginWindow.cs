@@ -10,10 +10,12 @@ public class LoginWindow : MonoBehaviour
     public Transform MachineNameInput;
     public Transform UsernameInput;
     public Transform PasswordInput;
+    public Transform HintText;
 
     private TMP_InputField _machineNameInput;
     private TMP_InputField _usernameInput;
     private PasswordControl _passwordInput;
+    private TextMeshProUGUI _hintText;
 
     // Start is called before the first frame update
     void Start()
@@ -21,15 +23,20 @@ public class LoginWindow : MonoBehaviour
         _machineNameInput = MachineNameInput.GetComponent<TMP_InputField>();
         _usernameInput = UsernameInput.GetComponent<TMP_InputField>();
         _passwordInput = PasswordInput.GetComponent<PasswordControl>();
+        _hintText = HintText.GetComponent<TextMeshProUGUI>();
 
-        ResetLoginWindow(MachineName, Username, "");
+        PasswordSolve.Instance.Tier = 1;
+        InitializeLoginWindow(MachineName, Username);
     }
 
-    public void ResetLoginWindow(string machineName, string username, string password)
+    public void InitializeLoginWindow(string machineName, string username)
     {
+        PasswordSolve.Instance.GeneratePasswordSolve();
+
         _machineNameInput.text = machineName;
         _usernameInput.text = username;
-        _passwordInput.GeneratePasswordWithMask("tele****graph**ing");
+        _passwordInput.GeneratePasswordWithMask(PasswordSolve.Instance.MaskedExample);
+        _hintText.text = PasswordSolve.Instance.Word.definition;
 
         if (!string.IsNullOrEmpty(_machineNameInput.text))
         {
