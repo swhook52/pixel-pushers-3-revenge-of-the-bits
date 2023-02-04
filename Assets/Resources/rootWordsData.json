@@ -1,12 +1,14 @@
 {
-	"rootWords": {
-		"root": "ab",
-		"definition": "away",
-		"tier": 1,
-		"examples": [
-			"absent", 
-			"abnormal", 
-			"absorb"
+	"rootWords": [
+		{
+			"root": "ab",
+			"definition": "away",
+			"tier": 1,
+			"examples": [
+				"absent",
+				"abnormal",
+				"absorb"
 			]
-      }
+		}
+	]
 }
