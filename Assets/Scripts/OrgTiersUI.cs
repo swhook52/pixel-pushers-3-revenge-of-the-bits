@@ -5,8 +5,10 @@ using UnityEngine.UIElements;
 
 public class OrgTiersUI : MonoBehaviour
 {
-    int ActiveTier = 1;
+    public int ActiveTier = 0;
     List<GroupBox> Tiers = new List<GroupBox>();
+
+    Button ActiveUser = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +34,31 @@ public class OrgTiersUI : MonoBehaviour
         Tiers.Add(DirectorRow);
         Tiers.Add(CeoRow);
 
-        // Debug.Log(ActiveTier);
-        // Debug.Log(Tiers.Count);
+        List<Button> AllUsers = root.Query<Button>().ToList();
+        AllUsers.ForEach(user => user.RegisterCallback<ClickEvent>(evt => ActiveUser = user));
 
-        Tiers[ActiveTier].AddToClassList("active-row");
+        UpdateTier(ActiveTier);
     }
+    public void UpdateTier(int tier)
+    {
+        if (tier < 0 || tier >= Tiers.Count) return;
+
+        GroupBox OldTier = Tiers[ActiveTier];
+        OldTier.RemoveFromClassList("active-row");
+        OldTier.Q<Label>().RemoveFromClassList("active-label");
+
+        ActiveTier = tier;
+
+        GroupBox NewTier = Tiers[ActiveTier];
+        NewTier.AddToClassList("active-row");
+        NewTier.Q<Label>().AddToClassList("active-label");
+    }
+
+    public void DisableUser(Button userButton)
+    {
+        userButton.style.unityBackgroundImageTintColor = Color.red;
+        userButton.SetEnabled(false);
+        userButton.AddToClassList("disabled-user");
+    }
+
 }
