@@ -8,8 +8,6 @@ public class RootWordsLoader : MonoBehaviour
     void Start()
     {
         RootWordsLibrary.LoadRootWords();
-
-        Debug.Log(RootWordsLibrary.RootWords);
     }
 
     // Update is called once per frame

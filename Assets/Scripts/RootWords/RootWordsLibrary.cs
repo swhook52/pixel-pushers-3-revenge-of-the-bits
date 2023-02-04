@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Text;
-using System.IO;
 
 public static class RootWordsLibrary
 {
@@ -10,11 +6,8 @@ public static class RootWordsLibrary
 
     public static void LoadRootWords()
     {
-        using (StreamReader r = new StreamReader("rootWordsData.json"))
-        {
-            string json = r.ReadToEnd();
-            RootWords = JsonUtility.FromJson<RootWordsModel>(json);
-        }
+        var jsonTextFile = Resources.Load<TextAsset>("rootWordsData");
+        RootWords = JsonUtility.FromJson<RootWordsModel>(jsonTextFile.text);
     }
 
     public static void DoSomething()
