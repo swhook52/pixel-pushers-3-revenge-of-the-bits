@@ -10,6 +10,11 @@ public static class RootWordsLibrary
         RootWords = JsonUtility.FromJson<RootWordsModel>(jsonTextFile.text);
     }
 
+    public static RootModel GetWordByTier(int tier)
+    {
+        return RootWords.rootWords.Find(x => x.tier == tier);
+    }
+
     public static void DoSomething()
     {
 
