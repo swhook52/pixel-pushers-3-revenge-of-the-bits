@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
@@ -40,7 +41,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (UserInput == Word.root)
         {
-            Reset();
+            Success();
             return;
         }
 
@@ -80,9 +81,15 @@ public class NewBehaviourScript : MonoBehaviour
         Word = null;
     }
 
-     void Success(){}
+     void Success(){
+        EditorUtility.DisplayDialog("Success",
+                "Success", "OK", "Cancel", DialogOptOutDecisionType.ForThisSession, null);
+        Reset();
+     }
 
      void Fail(){
+        EditorUtility.DisplayDialog("Fail",
+                "Fail", "OK", "Cancel", DialogOptOutDecisionType.ForThisSession, null);
         Reset();
      }
 
@@ -113,4 +120,5 @@ public class NewBehaviourScript : MonoBehaviour
         }
         return example.Replace(Word.root, RootReplacement);
     }
+
 }
