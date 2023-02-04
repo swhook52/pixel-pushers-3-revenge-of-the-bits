@@ -280,16 +280,6 @@
 			]
 		},
 		{
-			"root": "ex",
-			"definition": "former; past",
-			"tier": 1,
-			"examples": [
-				"ex-girlfriend",
-				"ex-president",
-				"ex-mayor"
-			]
-		},
-		{
 			"root": "fer",
 			"definition": "carry",
 			"tier": 1,
@@ -427,16 +417,6 @@
 				"intrastate",
 				"intramural",
 				"intrapersonal"
-			]
-		},
-		{
-			"root": "ism",
-			"definition": "condition; belief in",
-			"tier": 1,
-			"examples": [
-				"racism",
-				"tourism",
-				"journalism"
 			]
 		},
 		{
