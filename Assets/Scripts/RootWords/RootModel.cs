@@ -7,5 +7,6 @@ public class RootModel
 {
     public string root;
     public string definition;
+    public int tier;
     public List<string> examples;
 }

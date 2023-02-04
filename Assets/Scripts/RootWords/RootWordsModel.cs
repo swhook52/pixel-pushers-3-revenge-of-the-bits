@@ -5,5 +5,5 @@ using UnityEngine;
 [System.Serializable]
 public class RootWordsModel
 {
-    public RootModel rootWords;
+    public List<RootModel> rootWords;
 }
