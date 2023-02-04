@@ -24,7 +24,7 @@ public class NewBehaviourScript : MonoBehaviour
         RootWordsLibrary.LoadRootWords();
         Word = RootWordsLibrary.GetWordByTier(Tier);
         Example = Word.examples[0];
-        MaskedExample = MaskExample(Example);
+        MaskedExample = MaskExample();
         Hint = Word.definition;
     }
 
