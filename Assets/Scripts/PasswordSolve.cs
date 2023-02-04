@@ -110,6 +110,12 @@ public class PasswordSolve : MonoBehaviour
 
     private string GetNewExample()
     {
+        if (UsedExamples.Count == Word.examples.Count)
+        {
+            Fail();
+            return null;
+        }
+
         string example = Word.examples[random.Next(Word.examples.Count)];
         while (UsedExamples.Contains(example))
         {
