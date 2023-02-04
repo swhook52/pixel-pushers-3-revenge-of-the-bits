@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
@@ -12,6 +13,8 @@ public class NewBehaviourScript : MonoBehaviour
     string UserInput = "";
 
     string Example = null;
+    string MaskedExample = null;
+    System.Random random = new System.Random();
 
     List<string> UsedExamples = new List<string>();
     RootModel Word = null;
@@ -21,6 +24,7 @@ public class NewBehaviourScript : MonoBehaviour
         RootWordsLibrary.LoadRootWords();
         Word = RootWordsLibrary.GetWordByTier(Tier);
         Example = Word.examples[0];
+        MaskedExample = MaskExample(Example);
         Hint = Word.definition;
     }
 
@@ -52,14 +56,18 @@ public class NewBehaviourScript : MonoBehaviour
         ScrambleExample();
     }
 
-    void ScrambleExample()
+    IEnumerator ScrambleExample()
     {
-        int ScrambleIterations = 10;
+        int ScrambleIterations = 20;
         while (ScrambleIterations > 0)
         {
-            Example = "";
+            Example = RandomString(Example.Length);
             ScrambleIterations--;
+            yield return new WaitForSeconds(0.1f); // *skepticism intesifies* should delay the loop iterations by 0.1 seconds
         }
+
+        Example = GetNewExample();
+        MaskedExample = MaskExample(Example);
     }
 
     void Reset(){
@@ -78,12 +86,31 @@ public class NewBehaviourScript : MonoBehaviour
         Reset();
      }
 
-    // private static Random random = new Random();
+    private string RandomString(int length)
+    {
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        return new string(System.Linq.Enumerable.Repeat(chars, length)
+          .Select(s => s[random.Next(s.Length)]).ToArray());
+    }
 
-    // public static string RandomString(int length)
-    // {
-    //     const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    //     return new string(Enumerable.Repeat(chars, length)
-    //         .Select(s => s[random.Next(s.Length)]).ToArray());
-    // }
+    private string GetNewExample()
+    {
+        string example = Word.examples[random.Next(Word.examples.Count)];
+        while (UsedExamples.Contains(example))
+        {
+            example = Word.examples[random.Next(Word.examples.Count)];
+        }
+        return example;
+    }
+
+    private string MaskExample(string example)
+    {
+        int RootLength = Word.root.Length;
+        string RootReplacement = "";
+        for (int i = 0; i < RootLength; i++)
+        {
+            RootReplacement += "*";
+        }
+        return example.Replace(Word.root, RootReplacement);
+    }
 }
