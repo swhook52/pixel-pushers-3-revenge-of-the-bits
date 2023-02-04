@@ -1,474 +1,264 @@
 {
-	"rootWords": [
-		{
-			"root": "ab",
-			"definition": "away",
-			"tier": 1,
-			"examples": [
-				"absent",
-				"abnormal",
+	"rootWords": [{
+		"root": "ab",
+		"definition": "away",
+		"tier": 1,
+		"examples": [
+				"absent", 
+				"abnormal", 
 				"absorb"
-			]
-		},
-		{
-			"root": "ible",
-			"definition": "capable of",
-			"tier": 1,
-			"examples": [
-				"reversible",
-				"tangible",
-				"visible"
-			]
-		},
-		{
-			"root": "ad",
-			"definition": "to; toward",
-			"tier": 1,
-			"examples": [
-				"adhere",
-				"adjoin",
-				"adapt"
-			]
-		},
-		{
-			"root": "al",
-			"definition": "having to do with",
-			"tier": 1,
-			"examples": [
-				"herbal",
-				"factual",
-				"seasonal"
-			]
-		},
-		{
-			"root": "amb",
-			"definition": "around; both",
-			"tier": 1,
-			"examples": [
-				"ambient",
-				"ambiguous",
-				"amble"
-			]
-		},
-		{
-			"root": "ante",
-			"definition": "before",
-			"tier": 1,
-			"examples": [
-				"anterior",
-				"antebellum",
-				"antecedent"
-			]
-		},
-		{
-			"root": "anthrop",
-			"definition": "human",
-			"tier": 1,
-			"examples": [
-				"anthropology",
-				"misanthrope",
-				"philanthropist"
-			]
-		},
-		{
-			"root": "anti",
-			"definition": "against",
-			"tier": 1,
-			"examples": [
-				"antibiotic",
-				"antisocial",
-				"antifreeze"
-			]
-		},
-		{
-			"root": "aqu",
-			"definition": "water",
-			"tier": 1,
-			"examples": [
-				"aquarium",
-				"aqueduct",
-				"aquifer"
-			]
-		},
-		{
-			"root": "ast",
-			"definition": "star",
-			"tier": 1,
-			"examples": [
-				"astronomy",
-				"astrology",
-				"asteroid"
-			]
-		},
-		{
-			"root": "aud",
-			"definition": "hear",
-			"tier": 1,
-			"examples": [
-				"audio",
-				"audience",
-				"auditorium"
-			]
-		},
-		{
-			"root": "auto",
-			"definition": "self",
-			"tier": 1,
-			"examples": [
-				"autograph",
-				"automobile",
-				"autobiography"
-			]
-		},
-		{
-			"root": "ben",
-			"definition": "good",
-			"tier": 1,
-			"examples": [
-				"benefit",
-				"benign",
-				"benevolent"
-			]
-		},
-		{
-			"root": "bi",
-			"definition": "two",
-			"tier": 1,
-			"examples": [
-				"bicycle",
-				"bilingual",
-				"bisect"
-			]
-		},
-		{
-			"root": "bio",
-			"definition": "life",
-			"tier": 1,
-			"examples": [
-				"biology",
-				"biography",
-				"biopsy"
-			]
-		},
-		{
-			"root": "cent",
-			"definition": "hundred",
-			"tier": 1,
-			"examples": [
-				"century",
-				"percent",
-				"centipede"
-			]
-		},
-		{
-			"root": "chrono",
-			"definition": "time",
-			"tier": 1,
-			"examples": [
-				"chronic",
-				"chronological",
-				"chronicle"
-			]
-		},
-		{
-			"root": "circum",
-			"definition": "around",
-			"tier": 1,
-			"examples": [
-				"circumvent",
-				"circumscribe",
-				"circumference"
-			]
-		},
-		{
-			"root": "con",
-			"definition": "with; together",
-			"tier": 1,
-			"examples": [
-				"construct",
-				"connect",
-				"confer"
-			]
-		},
-		{
-			"root": "counter",
-			"definition": "opposing",
-			"tier": 1,
-			"examples": [
-				"counterbalance",
-				"counterfiet",
-				"counteract"
-			]
-		},
-		{
-			"root": "cred",
-			"definition": "believe",
-			"tier": 1,
-			"examples": [
-				"incredible",
-				"discredit",
-				"credence"
-			]
-		},
-		{
-			"root": "cycl",
-			"definition": "circle",
-			"tier": 1,
-			"examples": [
-				"recycle",
-				"bicycle",
-				"cyclone"
-			]
-		},
-		{
-			"root": "dec",
-			"definition": "ten",
-			"tier": 1,
-			"examples": [
-				"decade",
-				"decimal",
-				"decibel"
-			]
-		},
-		{
-			"root": "dem",
-			"definition": "people",
-			"tier": 1,
-			"examples": [
-				"democracy",
-				"demographics",
-				"epidemic"
-			]
-		},
-		{
-			"root": "dia",
-			"definition": "across; through",
-			"tier": 1,
-			"examples": [
-				"dialogue",
-				"diameter",
-				"diagnosis"
-			]
-		},
-		{
-			"root": "dict",
-			"definition": "speak; say",
-			"tier": 1,
-			"examples": [
-				"dictionary",
-				"dictate",
-				"contradict"
-			]
-		},
-		{
-			"root": "dis",
-			"definition": "not",
-			"tier": 1,
-			"examples": [
-				"disagree",
-				"disinfect",
-				"disobey"
-			]
-		},
-		{
-			"root": "equ",
-			"definition": "equal",
-			"tier": 1,
-			"examples": [
-				"equator",
-				"equality",
-				"equation"
-			]
-		},
-		{
-			"root": "ex",
-			"definition": "former; past",
-			"tier": 1,
-			"examples": [
-				"ex-girlfriend",
-				"ex-president",
-				"ex-mayor"
-			]
-		},
-		{
-			"root": "fer",
-			"definition": "carry",
-			"tier": 1,
-			"examples": [
-				"transfer",
-				"conifer",
-				"aquifer"
-			]
-		},
-		{
-			"root": "ful",
-			"definition": "full of",
-			"tier": 1,
-			"examples": [
-				"thoughtful",
-				"painful",
-				"helpful"
-			]
-		},
-		{
-			"root": "gen",
-			"definition": "born",
-			"tier": 1,
-			"examples": [
-				"gene",
-				"gender",
-				"genesis"
-			]
-		},
-		{
-			"root": "geo",
-			"definition": "earth",
-			"tier": 1,
-			"examples": [
-				"geology",
-				"geode",
-				"geography"
-			]
-		},
-		{
-			"root": "grad",
-			"definition": "step",
-			"tier": 1,
-			"examples": [
-				"graduation",
-				"graduate",
-				"gradual"
-			]
-		},
-		{
-			"root": "graph",
-			"definition": "write",
-			"tier": 1,
-			"examples": [
-				"paragraph",
-				"calligraphy",
-				"autograph"
-			]
-		},
-		{
-			"root": "hydro",
-			"definition": "water",
-			"tier": 1,
-			"examples": [
-				"hydroxide",
-				"hydrogen",
-				"hydroplane"
-			]
-		},
-		{
-			"root": "hyper",
-			"definition": "over; beyond",
-			"tier": 1,
-			"examples": [
-				"hyperactive",
-				"hyperlink",
-				"hyperventilate"
-			]
-		},
-		{
-			"root": "ian",
-			"definition": "related to; like",
-			"tier": 1,
-			"examples": [
-				"librarian",
-				"pedestrian",
-				"historian"
-			]
-		},
-		{
-			"root": "ic",
-			"definition": "having to do with",
-			"tier": 1,
-			"examples": [
-				"realistic",
-				"organic",
-				"metallic"
-			]
-		},
-		{
-			"root": "ile",
-			"definition": "related to",
-			"tier": 1,
-			"examples": [
-				"reptile",
-				"sterile",
-				"juvenile"
-			]
-		},
-		{
-			"root": "in",
-			"definition": "not",
-			"tier": 1,
-			"examples": [
-				"incapable",
-				"incomplete",
-				"inaudible"
-			]
-		},
-		{
-			"root": "inter",
-			"definition": "between",
-			"tier": 1,
-			"examples": [
-				"internet",
-				"intermission",
-				"international"
-			]
-		},
-		{
-			"root": "intra",
-			"definition": "within",
-			"tier": 1,
-			"examples": [
-				"intrastate",
-				"intramural",
-				"intrapersonal"
-			]
-		},
-		{
-			"root": "ism",
-			"definition": "condition; belief in",
-			"tier": 1,
-			"examples": [
-				"racism",
-				"tourism",
-				"journalism"
-			]
-		},
-		{
-			"root": "ist",
-			"definition": "person who does",
-			"tier": 1,
-			"examples": [
-				"soloist",
-				"artist",
-				"cyclist"
-			]
-		},
-		{
-			"root": "ity",
-			"definition": "state of being",
-			"tier": 1,
-			"examples": [
-				"creativity",
-				"disability",
-				"equality"
-			]
-		},
-		{
-			"root": "ject",
-			"definition": "throw",
-			"tier": 1,
-			"examples": [
-				"eject",
-				"reject",
-				"interject"
-			]
-		}
-	]
-}
+				]
+      },
+      {
+        "root": "ible",
+        "definition": "capable of",
+		"tier": 1,
+        "examples": [
+			"reversible", 
+			"tangible", 
+			"visible"
+        ]
+      },
+      {
+        "root": "ad",
+		"definition": "to; toward",
+		"tier": 1,
+		"examples": [
+			"adhere",
+			"adjoin",
+			"adapt"
+        ]
+      },
+      {
+        "root": "al",
+		"definition": "having to do with", 
+		"tier": 1,
+		"examples": [ 
+			"herbal", 
+			"factual", 
+			"seasonal"
+        ]
+      },
+      {
+        "root": "amb",
+		"definition": "around; both", 
+		"tier": 1,
+		"examples": [ 
+		"ambient", 
+		"ambiguous", 
+		"amble"
+        ]
+      },
+      {
+        "root": "ante",
+		"definition": "before", 
+		"tier": 1,
+		"examples": [ 
+		"anterior", "antebellum", "antecedent"
+        ]
+      },
+      {
+        "root": "anthrop",
+		"definition": "human", 
+		"tier": 1,
+		"examples": [ "anthropology", "misanthrope", "philanthropist"
+        ]
+      },
+      {
+        "root": "anti",
+		"definition": "against", 
+		"tier": 1, 
+		"examples": [ "antibiotic", "antisocial", "antifreeze"
+        ]
+      },
+      {
+        "root": "aqu",
+		"definition": "water", 
+		"tier": 1,
+		"examples": [ "aquarium", "aqueduct", "aquifer"
+        ]
+      },
+      {
+        "root": "ast",
+		"definition": "star", 
+		"tier": 1, 
+		"examples": [ "astronomy", "astrology", "asteroid"
+        ]
+      },
+      {
+        "root": "aud",
+		"definition": "hear", "tier": 1, "examples": [ "audio", "audience", "auditorium"
+        ]
+      },
+      {
+        "root": "auto",
+		"definition": "self", "tier": 1, "examples": [ "autograph", "automobile", "autobiography"
+        ]
+      },
+      {
+        "root": "ben",
+		"definition": "good", "tier": 1, "examples": [ "benefit", "benign", "benevolent"
+        ]
+      },
+      {
+        "root": "bi",
+		"definition": "two", "tier": 1, "examples": [ "bicycle", "bilingual", "bisect"
+        ]
+      },
+      {
+        "root": "bio",
+		"definition": "life", "tier": 1, "examples": [ "biology", "biography", "biopsy"
+        ]
+      },
+      {
+        "root": "cent",
+		"definition": "hundred", "tier": 1, "examples": [ "century", "percent", "centipede"
+        ]
+      },
+      {
+        "root": "chrono",
+		"definition": "time", "tier": 1, "examples": [ "chronic", "chronological", "chronicle"
+        ]
+      },
+      {
+        "root": "circum",
+		"definition": "around", "tier": 1, "examples": [ "circumvent", "circumscribe", "circumference"
+        ]
+      },
+      {
+        "root": "con",
+		"definition": "with; together", "tier": 1, "examples": [ "construct", "connect", "confer"
+        ]
+      },
+      {
+        "root": "counter",
+		"definition": "opposing", "tier": 1, "examples": [ "counterbalance", "counterfiet", "counteract"
+        ]
+      },
+      {
+        "root": "cred",
+		"definition": "believe", "tier": 1, "examples": [ "incredible", "discredit", "credence"
+        ]
+      },
+      {
+        "root": "cycl",
+		"definition": "circle", "tier": 1, "examples": [ "recycle", "bicycle", "cyclone"
+        ]
+      },
+      {
+        "root": "dec",
+		"definition": "ten", "tier": 1, "examples": [ "decade", "decimal", "decibel"
+        ]
+      },
+      {
+        "root": "dem",
+		"definition": "people", "tier": 1, "examples": [ "democracy", "demographics", "epidemic"
+        ]
+      },
+      {
+        "root": "dia",
+		"definition": "across; through", "tier": 1, "examples": [ "dialogue", "diameter", "diagnosis"
+        ]
+      },
+      {
+        "root": "dict",
+		"definition": "speak; say", "tier": 1, "examples": [ "dictionary", "dictate", "contradict"
+        ]
+      },
+      {
+        "root": "dis",
+		"definition": "not", "tier": 1, "examples": [ "disagree", "disinfect", "disobey"
+        ]
+      },
+      {
+        "root": "equ",
+		"definition": "equal", "tier": 1, "examples": [ "equator", "equality", "equation"
+        ]
+      },
+      {
+        "root": "fer",
+		"definition": "carry", "tier": 1, "examples": [ "transfer", "conifer", "aquifer"
+        ]
+      },
+      {
+        "root": "ful",
+		"definition": "full of", "tier": 1, "examples": [ "thoughtful", "painful", "helpful"
+        ]
+      },
+      {
+        "root": "gen",
+		"definition": "born", "tier": 1, "examples": [ "gene", "gender", "genesis"
+        ]
+      },
+      {
+        "root": "geo",
+		"definition": "earth", "tier": 1, "examples": [ "geology", "geode", "geography"
+        ]
+      },
+      {
+        "root": "grad",
+		"definition": "step", "tier": 1, "examples": [ "graduation", "graduate", "gradual"
+        ]
+      },
+      {
+        "root": "graph",
+		"definition": "write", "tier": 1, "examples": [ "paragraph", "calligraphy", "autograph"
+        ]
+      },
+      {
+        "root": "hydro",
+		"definition": "water", "tier": 1, "examples": [ "hydroxide", "hydrogen", "hydroplane"
+        ]
+      },
+      {
+        "root": "hyper",
+		"definition": "over; beyond", "tier": 1, "examples": [ "hyperactive", "hyperlink", "hyperventilate"
+        ]
+      },
+      {
+        "root": "ian",
+		"definition": "related to; like", "tier": 1, "examples": [ "librarian", "pedestrian", "historian"
+        ]
+      },
+      {
+        "root": "ic",
+		"definition": "having to do with", "tier": 1, "examples": [ "realistic", "organic", "metallic"
+        ]
+      },
+      {
+        "root": "ile",
+		"definition": "related to", "tier": 1, "examples": [ "reptile", "sterile", "juvenile"
+        ]
+      },
+      {
+        "root": "in",
+		"definition": "not", "tier": 1, "examples": [ "incapable", "incomplete", "inaudible"
+        ]
+      },
+      {
+        "root": "inter",
+		"definition": "between", "tier": 1, "examples": [ "internet", "intermission", "international"
+        ]
+      },
+      {
+        "root": "intra",
+		"definition": "within", "tier": 1, "examples": [ "intrastate", "intramural", "intrapersonal"
+        ]
+      },
+      {
+        "root": "ist",
+		"definition": "person who does", "tier": 1, "examples": [ "soloist", "artist", "cyclist"
+        ]
+      },
+      {
+        "root": "ity",
+		"definition": "state of being", "tier": 1, "examples": [ "creativity", "disability", "equality"
+        ]
+      },
+      {
+        "root": "ject",
+		"definition": "throw", "tier": 1, "examples": [ "eject", "reject", "interject"
+        ]
+      }
+    ]
+  }
