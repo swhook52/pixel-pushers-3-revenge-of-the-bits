@@ -8,17 +8,16 @@ public class NewBehaviourScript : MonoBehaviour
 {
     int Tier = 0;
     int Attempt = 0;
-
     string Hint = null;
     bool ShowHint = false;
     string UserInput = "";
-
     string Example = null;
     string MaskedExample = null;
     System.Random random = new System.Random();
-
     List<string> UsedExamples = new List<string>();
     RootModel Word = null;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +28,13 @@ public class NewBehaviourScript : MonoBehaviour
         Hint = Word.definition;
     }
 
+
     // Update is called once per frame
     void Update()
     {
         
     }
+
 
     void CheckAnswer()
     {
@@ -57,6 +58,7 @@ public class NewBehaviourScript : MonoBehaviour
         ScrambleExample();
     }
 
+
     IEnumerator ScrambleExample()
     {
         int ScrambleIterations = 20;
@@ -68,8 +70,9 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
         Example = GetNewExample();
-        MaskedExample = MaskExample(Example);
+        MaskedExample = MaskExample();
     }
+
 
     void Reset(){
         Attempt = 0;
@@ -77,9 +80,11 @@ public class NewBehaviourScript : MonoBehaviour
         ShowHint = false;
         UserInput = "";
         Example = null;
+        MaskedExample = null;
         UsedExamples.Clear();
         Word = null;
     }
+
 
      void Success(){
         EditorUtility.DisplayDialog("Success",
@@ -87,11 +92,13 @@ public class NewBehaviourScript : MonoBehaviour
         Reset();
      }
 
+
      void Fail(){
         EditorUtility.DisplayDialog("Fail",
                 "Fail", "OK", "Cancel", DialogOptOutDecisionType.ForThisSession, null);
         Reset();
      }
+
 
     private string RandomString(int length)
     {
@@ -99,6 +106,7 @@ public class NewBehaviourScript : MonoBehaviour
         return new string(System.Linq.Enumerable.Repeat(chars, length)
           .Select(s => s[random.Next(s.Length)]).ToArray());
     }
+
 
     private string GetNewExample()
     {
@@ -110,7 +118,8 @@ public class NewBehaviourScript : MonoBehaviour
         return example;
     }
 
-    private string MaskExample(string example)
+
+    private string MaskExample()
     {
         int RootLength = Word.root.Length;
         string RootReplacement = "";
@@ -118,7 +127,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             RootReplacement += "*";
         }
-        return example.Replace(Word.root, RootReplacement);
+        return Example.Replace(Word.root, RootReplacement);
     }
 
 }
