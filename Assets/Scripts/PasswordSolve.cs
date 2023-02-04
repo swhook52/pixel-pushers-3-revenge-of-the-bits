@@ -64,7 +64,7 @@ public class NewBehaviourScript : MonoBehaviour
         int ScrambleIterations = 20;
         while (ScrambleIterations > 0)
         {
-            Example = RandomString(Example.Length);
+            Example = RandomString(Example.Length - Word.root.Length);
             ScrambleIterations--;
             yield return new WaitForSeconds(0.1f); // *skepticism intesifies* should delay the loop iterations by 0.1 seconds
         }
