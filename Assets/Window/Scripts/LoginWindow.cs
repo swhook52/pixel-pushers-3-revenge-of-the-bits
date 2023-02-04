@@ -13,14 +13,14 @@ public class LoginWindow : MonoBehaviour
 
     private TMP_InputField _machineNameInput;
     private TMP_InputField _usernameInput;
-    private TMP_InputField _passwordInput;
+    private PasswordControl _passwordInput;
 
     // Start is called before the first frame update
     void Start()
     {
         _machineNameInput = MachineNameInput.GetComponent<TMP_InputField>();
         _usernameInput = UsernameInput.GetComponent<TMP_InputField>();
-        _passwordInput = PasswordInput.GetComponent<TMP_InputField>();
+        _passwordInput = PasswordInput.GetComponent<PasswordControl>();
 
         ResetLoginWindow(MachineName, Username, "");
     }
@@ -29,7 +29,7 @@ public class LoginWindow : MonoBehaviour
     {
         _machineNameInput.text = machineName;
         _usernameInput.text = username;
-        _passwordInput.text = "";
+        _passwordInput.GeneratePasswordWithMask("tele****graph**ing");
 
         if (!string.IsNullOrEmpty(_machineNameInput.text))
         {
@@ -51,6 +51,6 @@ public class LoginWindow : MonoBehaviour
 
     public void SolveWord()
     {
-        Debug.Log(_passwordInput.text);
+        Debug.Log(_passwordInput.Text);
     }
 }
