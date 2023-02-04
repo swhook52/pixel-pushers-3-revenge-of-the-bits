@@ -1,0 +1,37 @@
+{
+    "music": [
+        {
+            "filename": "title.mp3",
+            "attribution": {
+                "composer": "SERHII KOT (CAE/IPI 859761480)",
+                "publisher": "SERHII KOT",
+                "license": "https://creativecommons.org/licenses/by/3.0/"
+            }
+        },
+        {
+            "filename": "storyintro.mp3",
+            "attribution": {
+                "composer": "Chris Young/Midnight Danger",
+                "publisher": "Chris Young/Midnight Danger",
+                "url": "https://soundcloud.com/midnightdanger",
+                "license": "https://creativecommons.org/licenses/by/3.0/"
+            }
+        },
+        {
+            "filename": "orgtierselect.mp3",
+            "attribution": {
+                "composer": "SynthKid",
+                "producer": "SynthKid",
+                "url": "https://synthkid.bandcamp.com/",
+                "license": "https://creativecommons.org/licenses/by/3.0/"
+            }
+        },
+        {
+            "filename": "gameplay.mp3",
+            "attribution": {
+                "url": "https://soundcloud.com/royaltyfreebackgroundmusic",
+                "license": "https://creativecommons.org/licenses/by-nc-nd/2.0/"
+            }
+        }
+    ]
+}
