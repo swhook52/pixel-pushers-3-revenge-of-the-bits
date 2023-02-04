@@ -6,28 +6,48 @@ using UnityEngine;
 
 public class PasswordSolve : MonoBehaviour
 {
-    int Tier = 0;
+    public static PasswordSolve Instance;
+    
+    [HideInInspector]
+    public RootModel Word = null;
+    
+    [HideInInspector]
+    public string MaskedExample = null;
+
+    public int Tier;
     int Attempt = 0;
     string Hint = null;
     bool ShowHint = false;
     string UserInput = "";
     string Example = null;
-    string MaskedExample = null;
     System.Random random = new System.Random();
     List<string> UsedExamples = new List<string>();
-    RootModel Word = null;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        Tier = 1;
+    }
+
+    public void GeneratePasswordSolve()
+    {
         RootWordsLibrary.LoadRootWords();
-        Word = RootWordsLibrary.GetWordByTier(Tier);
+        Word = RootWordsLibrary.GetRandomWordByTier(Tier);
+        if (Word == null )
+        {
+            Debug.Log($"Unable to find a word for tier {Tier}");
+            return;
+        }
+
         Example = Word.examples[0];
         MaskedExample = MaskExample();
         Hint = Word.definition;
     }
-
 
     // Update is called once per frame
     void Update()
@@ -35,8 +55,7 @@ public class PasswordSolve : MonoBehaviour
         
     }
 
-
-    void CheckAnswer()
+    public void CheckAnswer()
     {
         Attempt++;
 

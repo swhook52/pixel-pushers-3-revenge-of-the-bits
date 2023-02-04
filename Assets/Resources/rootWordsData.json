@@ -1,12 +1,11 @@
 {
-	"rootWords": [
-		{
-			"root": "ab",
-			"definition": "away",
-			"tier": 1,
-			"examples": [
-				"absent",
-				"abnormal",
+	"rootWords": [{
+		"root": "ab",
+		"definition": "away",
+		"tier": 1,
+		"examples": [
+				"absent", 
+				"abnormal", 
 				"absorb"
 			]
 		},
@@ -123,7 +122,7 @@
 		{
 			"root": "ben",
 			"definition": "good",
-			"tier": 1,
+			"tier": 2,
 			"examples": [
 				"benefit",
 				"benign",
@@ -281,16 +280,6 @@
 			]
 		},
 		{
-			"root": "ex",
-			"definition": "former; past",
-			"tier": 1,
-			"examples": [
-				"ex-girlfriend",
-				"ex-president",
-				"ex-mayor"
-			]
-		},
-		{
 			"root": "fer",
 			"definition": "carry",
 			"tier": 1,
@@ -428,16 +417,6 @@
 				"intrastate",
 				"intramural",
 				"intrapersonal"
-			]
-		},
-		{
-			"root": "ism",
-			"definition": "condition; belief in",
-			"tier": 1,
-			"examples": [
-				"racism",
-				"tourism",
-				"journalism"
 			]
 		},
 		{
