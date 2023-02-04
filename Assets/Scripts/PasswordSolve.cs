@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class PasswordSolve : MonoBehaviour
 {
     int Tier = 0;
     int Attempt = 0;
