@@ -71,11 +71,11 @@ public class OrgTiersUI : MonoBehaviour
             });
         });
 
+        UpdateTier();
+
         GameManager.Instance.LockedUsers.ForEach(user => {
             DisableUser(user);
         });
-
-        UpdateTier();
     }
     public void UpdateTier()
     {
@@ -101,21 +101,30 @@ public class OrgTiersUI : MonoBehaviour
 
     private void RevealUserNames() {
 
-        List<Button> UserButtonInTier = Tiers[GameManager.Instance.Tier - 1].Query<Button>().ToList();
+        int currentTier = GameManager.Instance.Tier - 1;
+        while (currentTier >= 0)
+        {
+            List<Button> UserButtonInTier = Tiers[currentTier].Query<Button>().ToList();
 
-        UserButtonInTier.ForEach(userButton => {
-            var user = _users.SingleOrDefault(p => p.Key == userButton.viewDataKey);
-            if (user.Value == null)
-            {
-                return;
-            }
-            userButton.Q<Label>().text = user.Value.Username;
-        });
+            UserButtonInTier.ForEach(userButton => {
+                var user = _users.SingleOrDefault(p => p.Key == userButton.viewDataKey);
+                if (user.Value == null)
+                {
+                    return;
+                }
+                userButton.Q<Label>().text = user.Value.Username;
+            });
+            currentTier--;
+        }
     }
 
     public void DisableUser(User user)
     {
-        Button userButton = Tiers[user.Tier - 1].Query<Label>().ToList().Find(x => x.text == user.Username).parent as Button;
+        var tierGroup = Tiers[user.Tier - 1];
+        var tierGroupLabels = tierGroup.Query<Label>().ToList();
+        var userLabel = tierGroupLabels.Find(x => x.text == user.Username);
+
+        var userButton = userLabel.parent;
 
         List<string> UserClasses = new List<string> { "intern", "associate", "manager", "director" };
         UserClasses.ForEach(userClass => {

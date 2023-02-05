@@ -59,7 +59,7 @@ public class LoginWindow : MonoBehaviour
 
     }
 
-    private void RefreshPasswordControl()
+    public void RefreshPasswordControl()
     {
         _passwordInput.GeneratePasswordWithMask(PasswordSolve.Instance.MaskedExample);
         _hintText.text = PasswordSolve.Instance.Hint;
@@ -90,6 +90,7 @@ public class LoginWindow : MonoBehaviour
             {
                 Debug.Log("Out of attempts");
                 GameManager.Instance.LockedUsers.Add(GameManager.Instance.User);
+                SceneManager.LoadScene("OrgTiers");
             }
             else
             {
