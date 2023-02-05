@@ -1,12 +1,9 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoginWindow : MonoBehaviour
 {
-    public string MachineName;
-    public string Username;
-    public string Tier;
-
     public Transform MachineNameInput;
     public Transform UsernameInput;
     public Transform PasswordInput;
@@ -14,6 +11,9 @@ public class LoginWindow : MonoBehaviour
 
     public Transform AccessGrantedUi;
     public Transform AccessDeniedUi;
+
+    private string _machineName;
+    private string _username;
 
     private TMP_InputField _machineNameInput;
     private TMP_InputField _usernameInput;
@@ -23,13 +23,20 @@ public class LoginWindow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.Instance.LoginWindowComponent = this;
+        var user = GameManager.Instance.User;
+        if (user != null)
+        {
+            _machineName = user.MachineName;
+            _username = user.Username;
+        }
+
         _machineNameInput = MachineNameInput.GetComponent<TMP_InputField>();
         _usernameInput = UsernameInput.GetComponent<TMP_InputField>();
         _passwordInput = PasswordInput.GetComponent<PasswordControl>();
         _hintText = HintText.GetComponent<TextMeshProUGUI>();
 
-        PasswordSolve.Instance.Tier = 1;
-        InitializeLoginWindow(MachineName, Username);
+        InitializeLoginWindow(_machineName, _username);
     }
 
     public void InitializeLoginWindow(string machineName, string username)
@@ -73,6 +80,8 @@ public class LoginWindow : MonoBehaviour
         if (correct)
         {
             AccessGrantedUi.gameObject.SetActive(true);
+            GameManager.Instance.Tier++;
+            SceneManager.LoadScene("OrgTiers");
         }
         else
         {

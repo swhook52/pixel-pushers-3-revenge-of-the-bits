@@ -1,14 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class OrgTiersUI : MonoBehaviour
 {
-    public int ActiveTier = 0;
     List<GroupBox> Tiers = new List<GroupBox>();
 
-    Button ActiveUser = null;
+    private Dictionary<string, User> _users = new Dictionary<string, User>
+    {
+        { "I1", new User { Tier = 1, Username = "intern", MachineName = "ROAE_Intern_001" } },
+        { "A1", new User { Tier = 2, Username = "associate", MachineName = "ROAE_Associate_001" } },
+        { "M1", new User { Tier = 3, Username = "manager", MachineName = "ROAE_Manager_001" } },
+        { "D1", new User { Tier = 4, Username = "director", MachineName = "ROAE_Director_001" } },
+        { "CEO", new User { Tier = 5, Username = "ceo", MachineName = "ROAE_Ceo" } }
+    };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,21 +45,38 @@ public class OrgTiersUI : MonoBehaviour
         Tiers.Add(CeoRow);
 
         List<Button> AllUsers = root.Query<Button>().ToList();
-        AllUsers.ForEach(user => user.RegisterCallback<ClickEvent>(evt => ActiveUser = user));
+        AllUsers.ForEach(userButton => {
+            var user = _users.SingleOrDefault(p => p.Key == userButton.viewDataKey);
+            if (user.Value == null)
+            {
+                return;
+            }
 
-        UpdateTier(ActiveTier);
+            userButton.RegisterCallback<ClickEvent>(evt => {
+                Debug.Log(user.Value.MachineName);
+                GameManager.Instance.Tier = user.Value.Tier;
+                GameManager.Instance.User = user.Value;
+                SceneManager.LoadScene("MainScene");
+            });
+        });
+
+        UpdateTier();
     }
-    public void UpdateTier(int tier)
+    public void UpdateTier()
     {
-        if (tier < 0 || tier >= Tiers.Count) return;
+        Debug.Log(GameManager.Instance.Tier);
 
-        GroupBox OldTier = Tiers[ActiveTier];
-        OldTier.RemoveFromClassList("active-row");
-        OldTier.Q<Label>().RemoveFromClassList("active-label");
+        var activeTierIndex = GameManager.Instance.Tier - 1;
+        if (activeTierIndex > Tiers.Count) return;
 
-        ActiveTier = tier;
+        if (activeTierIndex > 0)
+        {
+            GroupBox OldTier = Tiers[activeTierIndex - 1];
+            OldTier.RemoveFromClassList("active-row");
+            OldTier.Q<Label>().RemoveFromClassList("active-label");
+        }
 
-        GroupBox NewTier = Tiers[ActiveTier];
+        GroupBox NewTier = Tiers[activeTierIndex];
         NewTier.AddToClassList("active-row");
         NewTier.Q<Label>().AddToClassList("active-label");
     }

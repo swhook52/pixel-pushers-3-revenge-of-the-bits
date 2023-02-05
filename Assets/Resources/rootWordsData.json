@@ -160,9 +160,9 @@
 			]
 		},
 		{
-			"root": "chrono",
+			"root": "chron",
 			"definition": "time",
-			"tier": 1,
+			"tier": 3,
 			"examples": [
 				"chronic",
 				"chronological",
@@ -302,7 +302,7 @@
 		{
 			"root": "gen",
 			"definition": "born",
-			"tier": 1,
+			"tier": 4,
 			"examples": [
 				"gene",
 				"gender",

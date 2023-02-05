@@ -20,8 +20,6 @@ public class PasswordSolve : MonoBehaviour
     [HideInInspector]
     public bool OutOfAttempts = false;
 
-    public int Tier;
-
     RootModel Word = null;
     int Attempt = 0;
     bool ShowHint = false;
@@ -36,16 +34,15 @@ public class PasswordSolve : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Tier = 1;
     }
 
     public void GeneratePasswordSolve()
     {
         RootWordsLibrary.LoadRootWords();
-        Word = RootWordsLibrary.GetRandomWordByTier(Tier);
+        Word = RootWordsLibrary.GetRandomWordByTier(GameManager.Instance.Tier);
         if (Word == null )
         {
-            Debug.Log($"Unable to find a word for tier {Tier}");
+            Debug.Log($"Unable to find a word for tier {GameManager.Instance.Tier}");
             return;
         }
 
