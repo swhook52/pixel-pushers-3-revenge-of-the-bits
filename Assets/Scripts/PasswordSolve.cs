@@ -158,4 +158,8 @@ public class PasswordSolve : MonoBehaviour
         return Example.Replace(Word.root, RootReplacement);
     }
 
+    public int getAttempt()
+    {
+        return Attempt;
+    }
 }
