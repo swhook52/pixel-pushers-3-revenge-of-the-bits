@@ -81,7 +81,6 @@ public class LoginWindow : MonoBehaviour
         {
             AccessGrantedUi.gameObject.SetActive(true);
             GameManager.Instance.Tier++;
-            GameManager.Instance.SuccessfulUsers.Add(GameManager.Instance.User);
             Invoke("HackUser", 4);
         }
         else
