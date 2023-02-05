@@ -12,6 +12,9 @@ public class LoginWindow : MonoBehaviour
     public Transform PasswordInput;
     public Transform HintText;
 
+    public Transform AccessGrantedUi;
+    public Transform AccessDeniedUi;
+
     private TMP_InputField _machineNameInput;
     private TMP_InputField _usernameInput;
     private PasswordControl _passwordInput;
@@ -35,8 +38,7 @@ public class LoginWindow : MonoBehaviour
 
         _machineNameInput.text = machineName;
         _usernameInput.text = username;
-        _passwordInput.GeneratePasswordWithMask(PasswordSolve.Instance.MaskedExample);
-        _hintText.text = PasswordSolve.Instance.Word.definition;
+        RefreshPasswordControl();
 
         if (!string.IsNullOrEmpty(_machineNameInput.text))
         {
@@ -50,6 +52,12 @@ public class LoginWindow : MonoBehaviour
 
     }
 
+    private void RefreshPasswordControl()
+    {
+        _passwordInput.GeneratePasswordWithMask(PasswordSolve.Instance.MaskedExample);
+        _hintText.text = PasswordSolve.Instance.Hint;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -58,6 +66,25 @@ public class LoginWindow : MonoBehaviour
 
     public void SolveWord()
     {
-        Debug.Log(_passwordInput.Text);
+        AccessGrantedUi.gameObject.SetActive(false);
+        AccessDeniedUi.gameObject.SetActive(false);
+
+        var correct = PasswordSolve.Instance.CheckAnswer(_passwordInput.Text);
+        if (correct)
+        {
+            AccessGrantedUi.gameObject.SetActive(true);
+        }
+        else
+        {
+            AccessDeniedUi.gameObject.SetActive(true);
+            if (PasswordSolve.Instance.OutOfAttempts)
+            {
+                Debug.Log("Out of attempts");
+            }
+            else
+            {
+                RefreshPasswordControl();
+            }
+        }
     }
 }

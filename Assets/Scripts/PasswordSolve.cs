@@ -9,17 +9,22 @@ public class PasswordSolve : MonoBehaviour
     public static PasswordSolve Instance;
     
     [HideInInspector]
-    public RootModel Word = null;
-    
+    public string Example = null;
+
     [HideInInspector]
     public string MaskedExample = null;
 
+    [HideInInspector]
+    public string Hint = null;
+
+    [HideInInspector]
+    public bool OutOfAttempts = false;
+
     public int Tier;
+
+    RootModel Word = null;
     int Attempt = 0;
-    string Hint = null;
     bool ShowHint = false;
-    string UserInput = "";
-    string Example = null;
     System.Random random = new System.Random();
     List<string> UsedExamples = new List<string>();
 
@@ -55,26 +60,28 @@ public class PasswordSolve : MonoBehaviour
         
     }
 
-    public void CheckAnswer()
+    public bool CheckAnswer(string rootAnswer)
     {
         Attempt++;
 
-        if (UserInput == Word.root)
+        if (Attempt > Word.examples.Count)
         {
-            Success();
-            return;
+            OutOfAttempts = true;
+            Reset();
+            return false;
         }
 
-        if(Attempt > Word.examples.Count)
+        if (rootAnswer == Word.root)
         {
-            Fail();
-            return;
+            Reset();
+            return true;
         }
 
-        ShowHint = Attempt >= 1 ? true : false;
+        ShowHint = Attempt >= 1;
 
         UsedExamples.Add(Example);
-        ScrambleExample();
+        StartCoroutine(ScrambleExample());
+        return false;
     }
 
 
@@ -94,10 +101,10 @@ public class PasswordSolve : MonoBehaviour
 
 
     void Reset(){
+        OutOfAttempts = false;
         Attempt = 0;
         Hint = null;
         ShowHint = false;
-        UserInput = "";
         Example = null;
         MaskedExample = null;
         UsedExamples.Clear();
@@ -105,24 +112,15 @@ public class PasswordSolve : MonoBehaviour
     }
 
 
-     void Success(){
-        EditorUtility.DisplayDialog("Success",
-                "Success", "OK", "Cancel", DialogOptOutDecisionType.ForThisSession, null);
-        Reset();
-     }
-
-
-     void Fail(){
-        EditorUtility.DisplayDialog("Fail",
-                "Fail", "OK", "Cancel", DialogOptOutDecisionType.ForThisSession, null);
-        Reset();
-     }
-
-
     private string RandomString(int length)
     {
-        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        return new string(System.Linq.Enumerable.Repeat(chars, length)
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        if (length < 0)
+        {
+            return "";
+        }
+
+        return new string(Enumerable.Repeat(chars, length)
           .Select(s => s[random.Next(s.Length)]).ToArray());
     }
 
@@ -131,7 +129,7 @@ public class PasswordSolve : MonoBehaviour
     {
         if (UsedExamples.Count == Word.examples.Count)
         {
-            Fail();
+            Reset();
             return null;
         }
 

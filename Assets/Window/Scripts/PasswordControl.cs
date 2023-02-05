@@ -71,7 +71,6 @@ public class PasswordControl : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Tab))
         {
-            Debug.Log("tabbing");
             if (SubmitButton != null)
             {
                 SubmitButton.Select();
@@ -128,6 +127,16 @@ public class PasswordControl : MonoBehaviour
 
     public void GeneratePasswordWithMask(string maskedWord)
     {
+        // Remove any controls that may have already existed
+        _inputControls.Clear();
+        inputIndex = 0;
+
+        // Remove any previous password controls
+        foreach (Transform child in transform) {
+            Destroy(child.gameObject);
+        }
+
+        // Add in a label or a textbox based on the masked word
         for (int i = 0; i < maskedWord.Length; i++)
         {
             char character = maskedWord[i];
