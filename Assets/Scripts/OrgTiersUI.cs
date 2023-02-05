@@ -71,6 +71,10 @@ public class OrgTiersUI : MonoBehaviour
             });
         });
 
+        GameManager.Instance.LockedUsers.ForEach(user => {
+            DisableUser(user);
+        });
+
         UpdateTier();
     }
     public void UpdateTier()
