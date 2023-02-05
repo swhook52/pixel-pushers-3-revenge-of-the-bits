@@ -67,7 +67,7 @@ public class OrgTiersUI : MonoBehaviour
         Debug.Log(GameManager.Instance.Tier);
 
         var activeTierIndex = GameManager.Instance.Tier - 1;
-        if (activeTierIndex > Tiers.Count) return;
+        if (activeTierIndex >= Tiers.Count) return;
 
         if (activeTierIndex > 0)
         {

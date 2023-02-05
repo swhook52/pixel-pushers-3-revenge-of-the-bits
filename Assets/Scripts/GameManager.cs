@@ -10,16 +10,17 @@ public class GameManager : MonoBehaviour
     public LoginWindow LoginWindowComponent;
 
     [HideInInspector]
-    public int Tier = 1;
+    public int Tier;
 
     [HideInInspector]
     public User User;
 
     void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (GameManager.Instance != null && GameManager.Instance != this)
         {
-            Destroy(Instance);
+            Destroy(gameObject);
+            return;
         }
         else
         {
@@ -30,5 +31,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Tier = 1;
     }
 }

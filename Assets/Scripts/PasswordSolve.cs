@@ -28,9 +28,10 @@ public class PasswordSolve : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (PasswordSolve.Instance != null && PasswordSolve.Instance != this)
         {
-            Destroy(Instance);
+            Destroy(gameObject);
+            return;
         }
         else
         {
