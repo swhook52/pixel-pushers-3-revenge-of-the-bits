@@ -474,7 +474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 68338919048739716, guid: 839056b4566403a4699f2ca77edc6085, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 1
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 68338919048739719, guid: 839056b4566403a4699f2ca77edc6085, type: 3}
       propertyPath: m_Name
@@ -764,6 +764,10 @@ PrefabInstance:
       propertyPath: ps
       value: 
       objectReference: {fileID: 2057132241}
+    - target: {fileID: 5374490102800706931, guid: 839056b4566403a4699f2ca77edc6085, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 839056b4566403a4699f2ca77edc6085, type: 3}
 --- !u!224 &443342176 stripped
