@@ -192,20 +192,20 @@ MonoBehaviour:
     step ahead of you. Despite your best efforts, the CEO covered his tracks and
     destroyed any evidence that could incriminate him.
 
-    
 
-    Your attempts
-    to expose the CEO''s corruption were met with skepticism, and you find yourself
-    unable to convince the public of the CEO''s wrongdoing. The CEO continued to
-    run the company with impunity, exploiting employees and customers and lining
-    his own pockets with ill-gotten gains.
 
-    
+    Your attempts to expose
+    the CEO''s corruption were met with skepticism, and you find yourself unable
+    to convince the public of the CEO''s wrongdoing. The CEO continued to run the
+    company with impunity, exploiting employees and customers and lining his own
+    pockets with ill-gotten gains.
 
-    Though you failed in your
-    mission, you and your team take comfort in knowing that you tried your best and
-    that your efforts had not been in vain. You vow to continue your fight for justice,
-    hoping that one day your persistence will pay off and the truth will be revealed.'
+
+
+    Though you failed in your mission, you
+    and your team take comfort in knowing that you tried your best and that your
+    efforts had not been in vain. You vow to continue your fight for justice, hoping
+    that one day your persistence will pay off and the truth will be revealed.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4ca2fd74d1a0ee40a30a40b733a027a, type: 2}
   m_sharedMaterial: {fileID: -2679741767549479942, guid: d4ca2fd74d1a0ee40a30a40b733a027a, type: 2}
@@ -534,8 +534,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d4ca2fd74d1a0ee40a30a40b733a027a, type: 2}
+  m_sharedMaterial: {fileID: -2679741767549479942, guid: d4ca2fd74d1a0ee40a30a40b733a027a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
