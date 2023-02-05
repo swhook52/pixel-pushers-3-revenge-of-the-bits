@@ -442,7 +442,7 @@
 		{
 			"root": "ject",
 			"definition": "throw",
-			"tier": 1,
+			"tier": 3,
 			"examples": [
 				"eject",
 				"reject",

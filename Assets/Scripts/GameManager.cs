@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public User User;
 
-    public List<User> LockedUsers;
+    public List<User> LockedUsers = new List<User>();
 
     void Awake()
     {
@@ -34,5 +34,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Tier = 1;
+    }
+
+    public void RefreshPasswordControl()
+    {
+        if (LoginWindowComponent != null)
+        {
+            LoginWindowComponent.RefreshPasswordControl();
+        }
     }
 }

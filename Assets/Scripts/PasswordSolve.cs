@@ -67,19 +67,18 @@ public class PasswordSolve : MonoBehaviour
 
     public bool CheckAnswer(string rootAnswer)
     {
-        Attempt++;
-
-        if (Attempt > Word.examples.Count)
-        {
-            OutOfAttempts = true;
-            Reset();
-            return false;
-        }
-
-        if (rootAnswer == Word.root)
+        if (rootAnswer == Word.root && Attempt < Word.examples.Count)
         {
             Reset();
             return true;
+        }
+
+        Attempt++;
+
+        if (Attempt >= Word.examples.Count)
+        {
+            OutOfAttempts = true;
+            return false;
         }
 
         ShowHint = Attempt >= 1;
@@ -95,13 +94,16 @@ public class PasswordSolve : MonoBehaviour
         int ScrambleIterations = 20;
         while (ScrambleIterations > 0)
         {
-            Example = RandomString(Example.Length - Word.root.Length);
+            Example = RandomString(Example.Length);
+            MaskedExample = Example;
+            GameManager.Instance.RefreshPasswordControl();
             ScrambleIterations--;
             yield return new WaitForSeconds(0.1f); // *skepticism intesifies* should delay the loop iterations by 0.1 seconds
         }
 
         Example = GetNewExample();
         MaskedExample = MaskExample();
+        GameManager.Instance.RefreshPasswordControl();
     }
 
 
@@ -158,4 +160,8 @@ public class PasswordSolve : MonoBehaviour
         return Example.Replace(Word.root, RootReplacement);
     }
 
+    public int getAttempt()
+    {
+        return Attempt;
+    }
 }
