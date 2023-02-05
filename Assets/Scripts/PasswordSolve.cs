@@ -82,10 +82,15 @@ public class PasswordSolve : MonoBehaviour
         }
 
         ShowHint = Attempt >= 1;
-
+        Invoke("StartScramblingPassword", 4);
         UsedExamples.Add(Example);
-        StartCoroutine(ScrambleExample());
+        
         return false;
+    }
+
+    void StartScramblingPassword()
+    {
+        StartCoroutine(ScrambleExample());
     }
 
 

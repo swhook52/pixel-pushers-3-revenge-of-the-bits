@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public User User;
 
     public List<User> LockedUsers = new List<User>();
+    public List<User> SuccessfulUsers = new List<User>();
 
     void Awake()
     {
