@@ -11,6 +11,7 @@ public class LoginWindow : MonoBehaviour
 
     public Transform AccessGrantedUi;
     public Transform AccessDeniedUi;
+    public Transform TutorialUi;
 
     private string _machineName;
     private string _username;
@@ -39,6 +40,10 @@ public class LoginWindow : MonoBehaviour
         _hintText = HintText.GetComponent<TextMeshProUGUI>();
 
         InitializeLoginWindow(_machineName, _username);
+        if(GameManager.Instance.Tier == 1)
+        {
+            TutorialUi.gameObject.SetActive(true);
+        }
     }
 
     public void InitializeLoginWindow(string machineName, string username)
