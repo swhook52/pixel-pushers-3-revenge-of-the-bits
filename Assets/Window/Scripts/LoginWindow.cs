@@ -83,10 +83,6 @@ public class LoginWindow : MonoBehaviour
             GameManager.Instance.Tier++;
             GameManager.Instance.SuccessfulUsers.Add(GameManager.Instance.User);
             Invoke("HackUser", 4);
-            if (GameManager.Instance.Tier <= 5)
-                SceneManager.LoadScene("OrgTiers");
-            else
-                SceneManager.LoadScene("WinScene");
         }
         else
         {
@@ -113,6 +109,9 @@ public class LoginWindow : MonoBehaviour
     {
         GameManager.Instance.Tier++;
         GameManager.Instance.SuccessfulUsers.Add(GameManager.Instance.User);
-        SceneManager.LoadScene("OrgTiers");
+        if (GameManager.Instance.Tier <= 5)
+            SceneManager.LoadScene("OrgTiers");
+        else
+            SceneManager.LoadScene("WinScene");
     }
 }
