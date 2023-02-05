@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -13,12 +14,13 @@ public static class RootWordsLibrary
 
     public static RootModel GetRandomWordByTier(int tier)
     {
-        var tierWords = RootWords.rootWords.Where(x => x.tier == tier);
-        if (tierWords.Any())
+        var tierWords = RootWords.rootWords.Where(word => word.tier == tier).ToArray();
+        
+        if (tierWords.Length > 0)
         {
             var random = new System.Random();
-            var randomIndex = random.Next(0, tierWords.Count());
-            return RootWords.rootWords[randomIndex];
+            var randomIndex = random.Next(0, tierWords.Length);
+            return tierWords[randomIndex];
         }
 
         return null;
