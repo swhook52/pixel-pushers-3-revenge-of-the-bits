@@ -166,6 +166,8 @@ public class OrgTiersUI : MonoBehaviour
         var lockedUserCount = GameManager.Instance.LockedUsers.Count;
         var currentTier = CurrentTier(user);
 
+        var countOfUsersByTier = GameManager.Instance.LockedUsers.FindAll(x => x.Tier == user.Tier).Count;
+
         if (currentTier == 1)
         {
             if (lockedUserCount == 5) CallGameOver();
@@ -173,22 +175,22 @@ public class OrgTiersUI : MonoBehaviour
 
         if (currentTier == 2)
         {
-            if (lockedUserCount == 9) CallGameOver();
+            if (lockedUserCount == 4) CallGameOver();
         }
 
         if (currentTier == 3)
         {
-            if (lockedUserCount == 12) CallGameOver();
+            if (lockedUserCount == 3) CallGameOver();
         }
 
         if (currentTier == 4)
         {
-            if (lockedUserCount == 14) CallGameOver();
+            if (lockedUserCount == 2) CallGameOver();
         }
 
         if (currentTier == 5)
         {
-            if (lockedUserCount == 15) CallGameOver();
+            if (lockedUserCount == 1) CallGameOver();
         }
     }
 
