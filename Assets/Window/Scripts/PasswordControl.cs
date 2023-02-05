@@ -12,7 +12,6 @@ public class PasswordControl : MonoBehaviour
     public char maskedCharacter = '*';
     public GameObject InputPrefab;
     public GameObject LabelPrefab;
-    public Button SubmitButton;
 
     private List<TMP_InputField> _inputControls = new List<TMP_InputField>();
     private int inputIndex = 0;
@@ -67,13 +66,6 @@ public class PasswordControl : MonoBehaviour
         {
             MoveToPreviousInput();
         }
-        else if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (SubmitButton != null)
-            {
-                SubmitButton.Select();
-            }
-        }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             MoveToNextInput();
@@ -99,7 +91,12 @@ public class PasswordControl : MonoBehaviour
             inputIndex = _inputControls.Count;
         }
         inputIndex--;
-        _inputControls[inputIndex].Select();
+
+        if (inputIndex >= 0 && inputIndex < _inputControls.Count)
+        {
+            _inputControls[inputIndex].Select();
+        }
+        
     }
 
     private void MoveToNextInput()
@@ -109,7 +106,11 @@ public class PasswordControl : MonoBehaviour
             inputIndex = -1;
         }
         inputIndex++;
-        _inputControls[inputIndex].Select();
+
+        if (inputIndex >= 0 && inputIndex < _inputControls.Count)
+        {
+            _inputControls[inputIndex].Select();
+        }
     }
 
     /// <summary>
