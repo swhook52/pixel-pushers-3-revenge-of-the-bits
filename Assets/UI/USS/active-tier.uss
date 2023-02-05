@@ -1,3 +1,39 @@
 .active-row {
-    background-color: rgba(0, 255, 0, .15);
+    background-color: rgba(0, 255, 0, 0.15);
+}
+
+.disabled-user {
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-left-color: rgb(255, 0, 0);
+    border-right-color: rgb(255, 0, 0);
+    border-top-color: rgb(255, 0, 0);
+    border-bottom-color: rgb(255, 0, 0);
+    cursor: resource('images/OrgTiers/denied_cursor');
+    opacity: 0.6;
+    background-image: resource('images/OrgTiers/locked');
+    scale: 0.9 0.9;
+}
+
+.enabled-user {
+}
+
+.default-label {
+    background-image: resource('images/OrgTiers/label');
+    color: rgb(212, 211, 212);
+}
+
+.active-label {
+    background-image: resource('images/OrgTiers/label_active');
+    color: rgba(23, 255, 0, 255);
+}
+
+.active-button {
+    scale: 0.8 0.8;
+    border-left-color: rgb(0, 255, 0);
+    border-right-color: rgb(0, 255, 0);
+    border-top-color: rgb(0, 255, 0);
+    border-bottom-color: rgb(0, 255, 0);
 }
