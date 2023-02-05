@@ -83,8 +83,7 @@ public class OrgTiersUI : MonoBehaviour
 
     public void UpdateTier()
     {
-        Debug.Log("In Tier ->" + GameManager.Instance.Tier);
-
+        Debug.Log("Updating Tier" + GameManager.Instance == null ? "No GameManager" : "HAVE GameManager");
         var activeTierIndex = GameManager.Instance.Tier - 1;
         if (activeTierIndex >= Tiers.Count) return;
 

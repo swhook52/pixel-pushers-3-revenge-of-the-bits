@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Instance { get; private set; }
 
     [HideInInspector]
     public LoginWindow LoginWindowComponent;
@@ -20,13 +20,16 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("GameManager Awake");
         if (GameManager.Instance != null && GameManager.Instance != this)
         {
-            Destroy(gameObject);
+            Debug.Log("Duplicate GameManager found. Removing other GameManager");
+            Destroy(this);
             return;
         }
         else
         {
+            Debug.Log("Creating game manager instance");
             Instance = this;
         }
         DontDestroyOnLoad(gameObject);
