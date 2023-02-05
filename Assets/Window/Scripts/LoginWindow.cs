@@ -89,6 +89,7 @@ public class LoginWindow : MonoBehaviour
             if (PasswordSolve.Instance.OutOfAttempts)
             {
                 Debug.Log("Out of attempts");
+                GameManager.Instance.LockedUsers.Add(GameManager.Instance.User);
             }
             else
             {

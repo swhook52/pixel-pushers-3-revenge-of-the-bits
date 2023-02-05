@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public User User;
 
+    public List<User> LockedUsers;
+
     void Awake()
     {
         if (GameManager.Instance != null && GameManager.Instance != this)

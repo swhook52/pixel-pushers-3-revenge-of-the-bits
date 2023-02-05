@@ -12,11 +12,21 @@ public class OrgTiersUI : MonoBehaviour
 
     private Dictionary<string, User> _users = new Dictionary<string, User>
     {
-        { "I1", new User { Tier = 1, Username = "intern", MachineName = "ROAE_Intern_001" } },
-        { "A1", new User { Tier = 2, Username = "associate", MachineName = "ROAE_Associate_001" } },
-        { "M1", new User { Tier = 3, Username = "manager", MachineName = "ROAE_Manager_001" } },
-        { "D1", new User { Tier = 4, Username = "director", MachineName = "ROAE_Director_001" } },
-        { "CEO", new User { Tier = 5, Username = "ceo", MachineName = "ROAE_Ceo" } }
+        { "I1", new User { Tier = 1, Username = "Alani Wilfried", MachineName = "RoAE_Intern_K51A3" } },
+        { "I2", new User { Tier = 1, Username = "Melina Lettice", MachineName = "RoAE_Intern_U87A8" } },
+        { "I3", new User { Tier = 1, Username = "Aither Fingal", MachineName = "RoAE_Intern_U87A8" } },
+        { "I4", new User { Tier = 1, Username = "Willow Ardith", MachineName = "RoAE_Intern_6V04F" } },
+        { "I5", new User { Tier = 1, Username = "Cade Hailie", MachineName = "RoAE_Intern_Z0595" } },
+        { "A1", new User { Tier = 2, Username = "Gregory Leroy", MachineName = "RoAE_Associate_7648G" } },
+        { "A2", new User { Tier = 2, Username = "Thom Bryn", MachineName = "RoAE_Associate_E5T30" } },
+        { "A3", new User { Tier = 2, Username = "Sharleen Justy", MachineName = "RoAE_Associate_8O99Y" } },
+        { "A4", new User { Tier = 2, Username = "Reba Lorine", MachineName = "RoAE_Associate_0JD32" } },
+        { "M1", new User { Tier = 3, Username = "Raylene Caiden", MachineName = "RoAE_Manager_724RM" } },
+        { "M2", new User { Tier = 3, Username = "Gage Keitha", MachineName = "RoAE_Manager_28TN2" } },
+        { "M3", new User { Tier = 3, Username = "Galilea Snow", MachineName = "RoAE_Manager_874S8" } },
+        { "D1", new User { Tier = 4, Username = "Amoura Estella", MachineName = "RoAE_Director_H869M" } },
+        { "D2", new User { Tier = 4, Username = "Lise Cedar", MachineName = "RoAE_Director_358XG" } },
+        { "CEO", new User { Tier = 5, Username = "Beff Jezos", MachineName = "RoAE_Bo$$Man" } }
     };
 
     // Start is called before the first frame update
@@ -56,8 +66,13 @@ public class OrgTiersUI : MonoBehaviour
                 Debug.Log(user.Value.MachineName);
                 GameManager.Instance.Tier = user.Value.Tier;
                 GameManager.Instance.User = user.Value;
+
                 SceneManager.LoadScene("MainScene");
             });
+        });
+
+        GameManager.Instance.LockedUsers.ForEach(user => {
+            DisableUser(user);
         });
 
         UpdateTier();
@@ -78,14 +93,38 @@ public class OrgTiersUI : MonoBehaviour
 
         GroupBox NewTier = Tiers[activeTierIndex];
         NewTier.AddToClassList("active-row");
+        NewTier.RemoveFromClassList("locked-row");
         NewTier.Q<Label>().AddToClassList("active-label");
+
+        RevealUserNames();
     }
 
-    public void DisableUser(Button userButton)
+    private void RevealUserNames() {
+
+        List<Button> UserButtonInTier = Tiers[GameManager.Instance.Tier - 1].Query<Button>().ToList();
+
+        UserButtonInTier.ForEach(userButton => {
+            var user = _users.SingleOrDefault(p => p.Key == userButton.viewDataKey);
+            if (user.Value == null)
+            {
+                return;
+            }
+            userButton.Q<Label>().text = user.Value.Username;
+        });
+    }
+
+    public void DisableUser(User user)
     {
+        Button userButton = Tiers[user.Tier - 1].Query<Label>().ToList().Find(x => x.text == user.Username).parent as Button;
+
+        List<string> UserClasses = new List<string> { "intern", "associate", "manager", "director" };
+        UserClasses.ForEach(userClass => {
+            userButton.RemoveFromClassList(userClass);
+        });
+        userButton.AddToClassList("locked");
+        userButton.AddToClassList("disabled-user");
         userButton.style.unityBackgroundImageTintColor = Color.red;
         userButton.SetEnabled(false);
-        userButton.AddToClassList("disabled-user");
     }
 
 }

@@ -27,7 +27,7 @@
 
 .active-label {
     background-image: resource('images/OrgTiers/label_active');
-    color: rgba(23, 255, 0, 255);
+    color: rgb(23, 255, 0);
 }
 
 .active-button {
@@ -36,4 +36,28 @@
     border-right-color: rgb(0, 255, 0);
     border-top-color: rgb(0, 255, 0);
     border-bottom-color: rgb(0, 255, 0);
+}
+
+.intern {
+    background-image: resource('images/OrgTiers/intern');
+}
+
+.locked {
+    background-image: resource('images/OrgTiers/locked');
+}
+
+.associate {
+    background-image: resource('images/OrgTiers/associate');
+}
+
+.manager {
+    background-image: resource('images/OrgTiers/managers');
+}
+
+.director {
+    background-image: resource('images/OrgTiers/directors');
+}
+
+.locked-row {
+    opacity: 0.15;
 }
