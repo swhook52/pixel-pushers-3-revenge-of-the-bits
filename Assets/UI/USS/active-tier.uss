@@ -61,3 +61,14 @@
 .locked-row {
     opacity: 0.15;
 }
+
+.success {
+    border-left-color: rgba(0, 255, 7, 255);
+    border-right-color: rgba(0, 255, 7, 255);
+    border-top-color: rgba(0, 255, 7, 255);
+    border-bottom-color: rgba(0, 255, 7, 255);
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+}

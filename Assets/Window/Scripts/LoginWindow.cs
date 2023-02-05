@@ -82,6 +82,7 @@ public class LoginWindow : MonoBehaviour
             AccessGrantedUi.gameObject.SetActive(true);
             GameManager.Instance.Tier++;
             SceneManager.LoadScene("OrgTiers");
+            GameManager.Instance.SuccessfulUsers.Add(GameManager.Instance.User);
         }
         else
         {

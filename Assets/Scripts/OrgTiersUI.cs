@@ -69,6 +69,7 @@ public class OrgTiersUI : MonoBehaviour
 
                 SceneManager.LoadScene("MainScene");
             });
+            userButton.SetEnabled(false);
         });
 
         UpdateTier();
@@ -76,7 +77,12 @@ public class OrgTiersUI : MonoBehaviour
         GameManager.Instance.LockedUsers.ForEach(user => {
             DisableUser(user);
         });
+
+        GameManager.Instance.SuccessfulUsers.ForEach(user => {
+            MarkUserAsSuccessful(user);
+        });
     }
+
     public void UpdateTier()
     {
         Debug.Log(GameManager.Instance.Tier);
@@ -107,6 +113,9 @@ public class OrgTiersUI : MonoBehaviour
             List<Button> UserButtonInTier = Tiers[currentTier].Query<Button>().ToList();
 
             UserButtonInTier.ForEach(userButton => {
+                if (currentTier + 1 == GameManager.Instance.Tier) {
+                    userButton.SetEnabled(true);
+                }
                 var user = _users.SingleOrDefault(p => p.Key == userButton.viewDataKey);
                 if (user.Value == null)
                 {
@@ -114,6 +123,7 @@ public class OrgTiersUI : MonoBehaviour
                 }
                 userButton.Q<Label>().text = user.Value.Username;
             });
+            Tiers[currentTier].RemoveFromClassList("locked-row");
             currentTier--;
         }
     }
@@ -133,7 +143,19 @@ public class OrgTiersUI : MonoBehaviour
         userButton.AddToClassList("locked");
         userButton.AddToClassList("disabled-user");
         userButton.style.unityBackgroundImageTintColor = Color.red;
-        userButton.SetEnabled(false);
+    }
+
+    public void MarkUserAsSuccessful(User user)
+    {
+        var tierGroup = Tiers[user.Tier - 1];
+        var tierGroupLabels = tierGroup.Query<Label>().ToList();
+        var userLabel = tierGroupLabels.Find(x => x.text == user.Username);
+
+        var userButton = userLabel.parent;
+
+        userLabel.text = "* HACKED *<br>" + user.Username;
+        userButton.AddToClassList("success");
+        userButton.style.unityBackgroundImageTintColor = Color.green;
     }
 
 }
