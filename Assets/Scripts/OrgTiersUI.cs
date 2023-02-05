@@ -144,6 +144,8 @@ public class OrgTiersUI : MonoBehaviour
         userButton.AddToClassList("locked");
         userButton.AddToClassList("disabled-user");
         userButton.style.unityBackgroundImageTintColor = Color.red;
+
+        CheckIfGameIsOver(user);
     }
 
     public void MarkUserAsSuccessful(User user)
@@ -157,5 +159,55 @@ public class OrgTiersUI : MonoBehaviour
         userLabel.text = "* HACKED *<br>" + user.Username;
         userButton.AddToClassList("success");
         userButton.style.unityBackgroundImageTintColor = Color.green;
+    }
+
+    public void CheckIfGameIsOver(User user)
+    {
+        var lockedUserCount = GameManager.Instance.LockedUsers.Count;
+        var currentTier = CurrentTier(user);
+
+        if (currentTier == 1)
+        {
+            if (lockedUserCount == 5) CallGameOver();
+        }
+
+        if (currentTier == 2)
+        {
+            if (lockedUserCount == 9) CallGameOver();
+        }
+
+        if (currentTier == 3)
+        {
+            if (lockedUserCount == 12) CallGameOver();
+        }
+
+        if (currentTier == 4)
+        {
+            if (lockedUserCount == 14) CallGameOver();
+        }
+
+        if (currentTier == 5)
+        {
+            if (lockedUserCount == 15) CallGameOver();
+        }
+    }
+
+    public int CurrentTier(User user)
+    {
+        var tierGroup = Tiers[user.Tier - 1];
+        var count = tierGroup.Query<Label>().ToList().Count - 1;
+
+        if (count == 5) return 1;
+        if (count == 4) return 2;
+        if (count == 3) return 3;
+        if (count == 2) return 4;
+        if (count == 1) return 5;
+
+        return 0;
+    }
+
+    public void CallGameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 }
