@@ -12,7 +12,7 @@
 		{
 			"root": "ible",
 			"definition": "capable of",
-			"tier": 1,
+			"tier": 3,
 			"examples": [
 				"reversible",
 				"tangible",
@@ -22,7 +22,7 @@
 		{
 			"root": "ad",
 			"definition": "to; toward",
-			"tier": 1,
+			"tier": 2,
 			"examples": [
 				"adhere",
 				"adjoin",
@@ -32,7 +32,7 @@
 		{
 			"root": "al",
 			"definition": "having to do with",
-			"tier": 1,
+			"tier": 3,
 			"examples": [
 				"herbal",
 				"factual",
@@ -42,7 +42,7 @@
 		{
 			"root": "amb",
 			"definition": "around; both",
-			"tier": 1,
+			"tier": 2,
 			"examples": [
 				"ambient",
 				"ambiguous",
@@ -52,7 +52,7 @@
 		{
 			"root": "ante",
 			"definition": "before",
-			"tier": 1,
+			"tier": 4,
 			"examples": [
 				"anterior",
 				"antebellum",
@@ -62,7 +62,7 @@
 		{
 			"root": "anthrop",
 			"definition": "human",
-			"tier": 1,
+			"tier": 3,
 			"examples": [
 				"anthropology",
 				"misanthrope",
@@ -82,7 +82,7 @@
 		{
 			"root": "aqu",
 			"definition": "water",
-			"tier": 1,
+			"tier": 2,
 			"examples": [
 				"aquarium",
 				"aqueduct",
@@ -92,7 +92,7 @@
 		{
 			"root": "ast",
 			"definition": "star",
-			"tier": 1,
+			"tier": 3,
 			"examples": [
 				"astronomy",
 				"astrology",
@@ -102,7 +102,7 @@
 		{
 			"root": "aud",
 			"definition": "hear",
-			"tier": 1,
+			"tier": 4,
 			"examples": [
 				"audio",
 				"audience",
@@ -122,7 +122,7 @@
 		{
 			"root": "ben",
 			"definition": "good",
-			"tier": 2,
+			"tier": 4,
 			"examples": [
 				"benefit",
 				"benign",
@@ -152,7 +152,7 @@
 		{
 			"root": "cent",
 			"definition": "hundred",
-			"tier": 1,
+			"tier": 4,
 			"examples": [
 				"century",
 				"percent",
@@ -162,7 +162,7 @@
 		{
 			"root": "chron",
 			"definition": "time",
-			"tier": 3,
+			"tier": 2,
 			"examples": [
 				"chronic",
 				"chronological",
@@ -202,7 +202,7 @@
 		{
 			"root": "cred",
 			"definition": "believe",
-			"tier": 1,
+			"tier": 4,
 			"examples": [
 				"incredible",
 				"discredit",
@@ -222,7 +222,7 @@
 		{
 			"root": "dec",
 			"definition": "ten",
-			"tier": 1,
+			"tier": 5,
 			"examples": [
 				"decade",
 				"decimal",
@@ -242,7 +242,7 @@
 		{
 			"root": "dia",
 			"definition": "across; through",
-			"tier": 1,
+			"tier": 4,
 			"examples": [
 				"dialogue",
 				"diameter",
@@ -252,7 +252,7 @@
 		{
 			"root": "dict",
 			"definition": "speak; say",
-			"tier": 1,
+			"tier": 3,
 			"examples": [
 				"dictionary",
 				"dictate",
@@ -272,7 +272,7 @@
 		{
 			"root": "equ",
 			"definition": "equal",
-			"tier": 1,
+			"tier": 2,
 			"examples": [
 				"equator",
 				"equality",
@@ -282,7 +282,7 @@
 		{
 			"root": "fer",
 			"definition": "carry",
-			"tier": 1,
+			"tier": 4,
 			"examples": [
 				"transfer",
 				"conifer",
@@ -302,7 +302,7 @@
 		{
 			"root": "gen",
 			"definition": "born",
-			"tier": 4,
+			"tier": 5,
 			"examples": [
 				"gene",
 				"gender",
@@ -322,7 +322,7 @@
 		{
 			"root": "grad",
 			"definition": "step",
-			"tier": 1,
+			"tier": 3,
 			"examples": [
 				"graduation",
 				"graduate",
@@ -362,7 +362,7 @@
 		{
 			"root": "ian",
 			"definition": "related to; like",
-			"tier": 1,
+			"tier": 3,
 			"examples": [
 				"librarian",
 				"pedestrian",
