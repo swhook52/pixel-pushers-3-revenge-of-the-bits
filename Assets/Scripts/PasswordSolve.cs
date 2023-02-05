@@ -28,7 +28,15 @@ public class PasswordSolve : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (PasswordSolve.Instance != null && PasswordSolve.Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     // Start is called before the first frame update

@@ -10,18 +10,27 @@ public class GameManager : MonoBehaviour
     public LoginWindow LoginWindowComponent;
 
     [HideInInspector]
-    public int Tier = 1;
+    public int Tier;
 
     [HideInInspector]
     public User User;
 
     void Awake()
     {
-        Instance = this;
+        if (GameManager.Instance != null && GameManager.Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            Instance = this;
+        }
         DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
+        Tier = 1;
     }
 }
