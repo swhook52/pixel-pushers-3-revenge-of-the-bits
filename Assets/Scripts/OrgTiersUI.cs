@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TreeEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -165,30 +162,38 @@ public class OrgTiersUI : MonoBehaviour
     {
         var lockedUserCount = GameManager.Instance.LockedUsers.Count;
         var currentTier = CurrentTier(user);
+        int numLockedInTier = 0;
+
+        foreach (User tempUser in GameManager.Instance.LockedUsers)
+        {
+            if (tempUser.Tier == currentTier) numLockedInTier++;
+        }
+
+        var countOfUsersByTier = GameManager.Instance.LockedUsers.FindAll(x => x.Tier == user.Tier).Count;
 
         if (currentTier == 1)
         {
-            if (lockedUserCount == 5) CallGameOver();
+            if (numLockedInTier==5) CallGameOver();
         }
 
         if (currentTier == 2)
         {
-            if (lockedUserCount == 9) CallGameOver();
+            if (numLockedInTier==4) CallGameOver();
         }
 
         if (currentTier == 3)
         {
-            if (lockedUserCount == 12) CallGameOver();
+            if (numLockedInTier==3) CallGameOver();
         }
 
         if (currentTier == 4)
         {
-            if (lockedUserCount == 14) CallGameOver();
+            if (numLockedInTier==2) CallGameOver();
         }
 
         if (currentTier == 5)
         {
-            if (lockedUserCount == 15) CallGameOver();
+            if (numLockedInTier==1) CallGameOver();
         }
     }
 
