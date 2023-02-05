@@ -83,20 +83,33 @@ public class LoginWindow : MonoBehaviour
             GameManager.Instance.Tier++;
             SceneManager.LoadScene("OrgTiers");
             GameManager.Instance.SuccessfulUsers.Add(GameManager.Instance.User);
+            Invoke("HackUser", 4);
         }
         else
         {
             AccessDeniedUi.gameObject.SetActive(true);
             if (PasswordSolve.Instance.OutOfAttempts)
             {
-                Debug.Log("Out of attempts");
-                GameManager.Instance.LockedUsers.Add(GameManager.Instance.User);
-                SceneManager.LoadScene("OrgTiers");
+                Invoke("LockUser", 4);
             }
             else
             {
                 RefreshPasswordControl();
             }
         }
+    }
+
+    public void LockUser()
+    {
+        Debug.Log("Out of attempts");
+        GameManager.Instance.LockedUsers.Add(GameManager.Instance.User);
+        SceneManager.LoadScene("OrgTiers");
+    }
+
+    public void HackUser()
+    {
+        GameManager.Instance.Tier++;
+        GameManager.Instance.SuccessfulUsers.Add(GameManager.Instance.User);
+        SceneManager.LoadScene("OrgTiers");
     }
 }

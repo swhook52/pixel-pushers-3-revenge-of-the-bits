@@ -12,7 +12,7 @@ public class PasswordFailure : MonoBehaviour
     public int maxAttempts = 3;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         attemptsText.text = "Attempts Remaining: " + (maxAttempts - ps.getAttempt());         //set this to (maxAttempts - PasswordSolve.Attempt)
         if(ps.OutOfAttempts)                                             
@@ -23,5 +23,11 @@ public class PasswordFailure : MonoBehaviour
         {
             resetText.text = "Resetting Password...";
         }
+        PlaySound();
+    }
+
+    public void PlaySound()
+    {
+        GetComponent<AudioSource>().Play();
     }
 }
