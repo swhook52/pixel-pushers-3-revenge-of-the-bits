@@ -44,4 +44,12 @@ public class GameManager : MonoBehaviour
             LoginWindowComponent.RefreshPasswordControl();
         }
     }
+
+    public void SolveWord()
+    {
+        if (LoginWindowComponent != null)
+        {
+            LoginWindowComponent.SolveWord();
+        }
+    }
 }

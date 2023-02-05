@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PasswordControl : MonoBehaviour
@@ -60,10 +61,7 @@ public class PasswordControl : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            if (SubmitButton != null)
-            {
-                SubmitButton.onClick.Invoke();
-            }
+            GameManager.Instance.SolveWord();
         }
         else if (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.LeftArrow))
         {

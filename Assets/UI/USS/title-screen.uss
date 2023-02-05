@@ -1,0 +1,9 @@
+.hidden {
+    display: none;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: -5000px;
+}

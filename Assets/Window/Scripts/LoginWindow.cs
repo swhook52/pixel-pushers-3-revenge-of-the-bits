@@ -20,6 +20,8 @@ public class LoginWindow : MonoBehaviour
     private PasswordControl _passwordInput;
     private TextMeshProUGUI _hintText;
 
+    private bool _submittedSolve = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +65,7 @@ public class LoginWindow : MonoBehaviour
     {
         _passwordInput.GeneratePasswordWithMask(PasswordSolve.Instance.MaskedExample);
         _hintText.text = PasswordSolve.Instance.Hint;
+        _submittedSolve = false;
     }
 
     // Update is called once per frame
@@ -73,6 +76,13 @@ public class LoginWindow : MonoBehaviour
 
     public void SolveWord()
     {
+        if (_submittedSolve)
+        {
+            return;
+        }
+
+        _submittedSolve = true;
+
         AccessGrantedUi.gameObject.SetActive(false);
         AccessDeniedUi.gameObject.SetActive(false);
 
