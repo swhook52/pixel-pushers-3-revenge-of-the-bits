@@ -19,6 +19,9 @@ public class WinScene : MonoBehaviour
 
     public void MainMenu()
     {
+        GameManager.Instance.Tier = 1;
+        GameManager.Instance.LockedUsers.Clear();
+        GameManager.Instance.SuccessfulUsers.Clear();
         SceneManager.LoadScene("StartMenu");
     }
 }
