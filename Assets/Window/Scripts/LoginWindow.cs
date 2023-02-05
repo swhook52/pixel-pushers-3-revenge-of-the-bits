@@ -12,6 +12,7 @@ public class LoginWindow : MonoBehaviour
     public Transform AccessGrantedUi;
     public Transform AccessDeniedUi;
     public Transform TutorialUi;
+    public Transform TerminalUi;
 
     private string _machineName;
     private string _username;
@@ -95,20 +96,27 @@ public class LoginWindow : MonoBehaviour
         if (correct)
         {
             AccessGrantedUi.gameObject.SetActive(true);
-            Invoke("HackUser", 4);
+            Invoke("OpenTerminal", 4f);
         }
         else
         {
             AccessDeniedUi.gameObject.SetActive(true);
             if (PasswordSolve.Instance.OutOfAttempts)
             {
-                Invoke("LockUser", 4);
+                Invoke("LockUser", 4f);
             }
             else
             {
                 RefreshPasswordControl();
             }
         }
+    }
+
+
+    public void OpenTerminal()
+    {
+        TerminalUi.gameObject.SetActive(true);
+        Invoke("HackUser", 4f);
     }
 
     public void LockUser()
