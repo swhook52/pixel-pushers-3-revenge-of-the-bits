@@ -32,6 +32,15 @@
                 "url": "https://soundcloud.com/royaltyfreebackgroundmusic",
                 "license": "https://creativecommons.org/licenses/by-nc-nd/2.0/"
             }
+        },
+        {
+            "filename": "winmusic.mp3",
+            "attribution": {
+                "composer": "Vlad Gluschenko",
+                "promoter": "https://www.free-stock-music.com",
+                "url": "https://soundcloud.com/vgl9",
+                "license": "https://creativecommons.org/licenses/by/3.0/deed.en_US"
+            }
         }
     ]
 }
