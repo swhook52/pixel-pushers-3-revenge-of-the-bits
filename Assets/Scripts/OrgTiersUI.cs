@@ -172,6 +172,8 @@ public class OrgTiersUI : MonoBehaviour
             if (tempUser.Tier == currentTier) numLockedInTier++;
         }
 
+        var countOfUsersByTier = GameManager.Instance.LockedUsers.FindAll(x => x.Tier == user.Tier).Count;
+
         if (currentTier == 1)
         {
             if (numLockedInTier==5) CallGameOver();

@@ -656,6 +656,10 @@ PrefabInstance:
       propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 68338920603750539, guid: 839056b4566403a4699f2ca77edc6085, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 68338920603750541, guid: 839056b4566403a4699f2ca77edc6085, type: 3}
       propertyPath: m_Name
       value: SubmitButton
